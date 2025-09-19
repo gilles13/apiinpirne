@@ -4,7 +4,7 @@ An `R` *package* to easily request RNE Inpi API
 
 ## Installation
 
-No package binarie available in CRAN. Need manual compilation.
+No package binary available in CRAN. Need manual compilation.
 
 ```
 git clone git@github.com:gilles13/apiinpirne.git
@@ -20,4 +20,8 @@ or use `devtools` *package* from `R`
 devtools::install_github('gilles13/apiinpirne')
 ```
 
+## Required
 
++ `R` binary
++ An account on [inpi.fr](https://data.inpi.fr/register)
++ Motivation
