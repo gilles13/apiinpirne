@@ -1,0 +1,27 @@
+---
+title: "apiinpirne"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{apiinpirne}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+  comment = "#>"
+)
+```
+
+```{r, out.width="50%"}
+knitr::include_graphics(path = "../man/figures/logo_apiinpirne_center.png")
+```
+
+Le *package* `apiinpirne` permet de requêter sur l'API RNE (Registre National des Entreprises) de l'[Inpi](https://www.inpi.fr/){target="_blank"}.
+
+Vous devez créer un compte sur [Inpi Connect](https://data.inpi.fr/register){target="_blank"} avant de pouvoir utiliser le *package*.
+
+Des informations complémentaires sont disponibles dans le *package* [apidoc](https://github.com/gilles13/apidoc){target="_blank"}.
