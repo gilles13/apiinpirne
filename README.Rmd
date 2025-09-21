@@ -2,53 +2,30 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
 # apiinpirne
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of apiinpirne is to query INPI API RNE
+R *package* to easily request RNE Inpi API
 
 ## Installation
 
-You can install apiinpirne like so:
+No package binary available in CRAN. Need manual compilation.
 
-``` r
-library("apiinpirne")
+```
+git clone git@github.com:gilles13/apiinpirne.git
+
+R CMD build apiinpirne
+
+R CMD INSTALL apiinpirne_0.0.0.9000.tar.gz
 ```
 
-## Example
+or use `devtools` *package* from `R`
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(apiinpirne)
-## basic example code
+```
+devtools::install_github('gilles13/apiinpirne')
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## Required
 
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
++ `R` binary
++ An account on [inpi.fr](https://data.inpi.fr/register)
++ Motivation
