@@ -80,10 +80,132 @@
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">inpi_get_acte</span><span class="op">(</span>id <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in httr2::req_perform(httr2::req_body_json(httr2::request("https://registre-national-entreprises.inpi.fr/api/sso/login"),     list(username = user, password = Sys.getenv(varenv)))):</span> Failed to perform HTTP request.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Could not connect to server [registre-national-entreprises.inpi.fr]:</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> Failed to connect to registre-national-entreprises.inpi.fr port 443 after 846 ms: Could not connect to server</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                    updatedAt     siren</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2025-09-21T16:20:40+02:00 991644733</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2025-09-21T15:59:59+02:00 991644444</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2025-09-21T15:57:07+02:00 991644428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2025-09-21T15:41:53+02:00 845262047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2025-09-21T15:31:15+02:00 991644022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2025-09-21T15:16:56+02:00 991643826</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2025-09-21T14:53:19+02:00 991643511</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2025-09-21T14:47:15+02:00 991643438</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2025-09-21T14:40:16+02:00 991643370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2025-09-21T13:03:22+02:00 991603291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2025-09-21T13:03:22+02:00 991603291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2025-09-21T13:03:22+02:00 991603291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2025-09-21T13:03:20+02:00 977551555</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2025-09-21T13:03:20+02:00 977551555</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2025-09-21T13:03:16+02:00 991642331</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 2025-09-21T13:03:11+02:00 991396995</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 2025-09-21T13:03:11+02:00 991396995</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 2025-09-21T13:03:11+02:00 991396995</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 2025-09-21T13:03:10+02:00 991161522</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 2025-09-21T13:03:06+02:00 489920926</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                 denomination  dateDepot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                              Aurore CARIOU 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                          BENEDICTE COLLOMP 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                               Ons Larguech 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                            MAXIME LECOMPTE 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                   Lilia Sekhleyan Kerobyan 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             Farid nekkachi 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                            FLORIE BOUSQUIE 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                    Jean-Francois Herbommez 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                Komal Tahir 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                               SPEED PARTS 2025-09-20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                               SPEED PARTS 2025-09-19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                               SPEED PARTS 2025-09-19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                               Mayminco O1 2025-09-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                               Mayminco O1 2025-09-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                         Christelle Grimal 2025-09-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                                       MDY 2025-09-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                                       MDY 2025-09-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                                       MDY 2025-09-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                                       LAP 2025-09-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 SOCIETE CIVILE IMMOBILIERE LES MARMOUZETS 2025-09-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                nomDocument confidentiality</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1               Attestation-d-avoir_informe-votre-conjoint          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                            AUTORCONJOINT          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                              declaration_honneur_TIAN_LI          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                     img20250919_10195387          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                  Image_1          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Bail_d_habitation_meublee_12_Rue_Domremy_75013_V_Signee          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                         Declaration_d_option_du_conjoint          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                  Carte_d_identite_Sophie          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                      MUHAMMAD_AJMAIR_TAHIR_accord_expres          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10               Liste_des_souscripteurs_certifie_conforme          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   Certificat_de_depot_des_fonds_liste_des_souscripteurs          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                  Statuts_certifie_conforme_a_l_original          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13    Mayminco_O1_-_Extrait_decision_du_President_RKP_docx          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                     Mayminco_O1_-_Statuts_post_RKP_docx          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                   GRIMAL_CHRISTELLE_CAPE_2025_08_signed          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                                 LISTE_DES_SOUSCRIPTEURS          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                     DEPOT_DE_CAPITAL_-_BANQUE_POPULAIRE          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                                    STATUTS_CONSTITUTIFS          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                               STATUTS_SIGNES_18_08_2025          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                                 CESSION3_LES_MARMOUZETS          Public</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    deleted typeDocument</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    FALSE        PJ_68</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    FALSE        PJ_94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    FALSE        PJ_94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    FALSE        PJ_01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    FALSE        PJ_94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    FALSE        PJ_61</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    FALSE        PJ_94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    FALSE        PJ_94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    FALSE        PJ_94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   FALSE        PJ_06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   FALSE        PJ_06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   FALSE        PJ_01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   FALSE        PJ_54</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   FALSE        PJ_02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15   FALSE        PJ_61</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16   FALSE       PJ_138</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17   FALSE       PJ_180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18   FALSE        PJ_01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19   FALSE        PJ_01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   FALSE       PJ_190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                  libelle</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                Exemplaire de l’accord exprès et de l’information préalable du conjoint (daté et signé)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                                         Déclaration d’option du conjoint collaborateur</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                                         Déclaration d’option du conjoint collaborateur</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                                                                                      Copie des statuts</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                                         Déclaration d’option du conjoint collaborateur</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Copie du contrat d’appui au projet d’entreprise pour la création ou la reprise d’une activité économique certifiée conforme par le représentant légal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                                                                         Déclaration d’option du conjoint collaborateur</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                                                                                         Déclaration d’option du conjoint collaborateur</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                                                                                         Déclaration d’option du conjoint collaborateur</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                         Certificat du dépositaire des fonds correspondant aux souscriptions avec en annexe la liste des souscripteurs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                         Certificat du dépositaire des fonds correspondant aux souscriptions avec en annexe la liste des souscripteurs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                                                                                                                     Copie des statuts</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                                                  PV ayant décidé et constaté la modification enregistrée, certifié conforme par le représentant légal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                                                                                                                          Copie des statuts mis à jour</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Copie du contrat d’appui au projet d’entreprise pour la création ou la reprise d’une activité économique certifiée conforme par le représentant légal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                                                                                                                               Liste des souscripteurs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                                                                                                                        Attestation de dépôt des fonds</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                                                                                                                                     Copie des statuts</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                                                                                                                                     Copie des statuts</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                                                        Acte sous seing privé de modification de la répartition des parts sociales (cession, donation)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          numNat                       id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  J00175449925 68d009b83997ccd4a50b81b0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  J00175448067 68d004dfb376132fdd015298</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  J00175447838 68d00433572c41619a0308e7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  J00175446236 68d000a12c99a2ed20026c6f</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  J00175445766 68cffe23e75fc9abf20828f3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  J00175444595 68cffac822964c13a00e7516</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  J00175442664 68cff53f2dfa607cd2098737</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  J00175442102 68cff3d3b40c7da8be0bba37</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  J00175441575 68cff230c1347f62d304dc98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 J00175184001 68cfdb7ad8a5ab32b80e9ee2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 J00175184001 68cfdb7ad8a5ab32b80e9edd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 J00175184001 68cfdb7ad8a5ab32b80e9edb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 J00175064146 68cfdb78fc3d4dc289004a2a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 J00175064146 68cfdb78fc3d4dc289004a29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 J00175434760 68cfdb74deb787a17608ff37</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 J00173888041 68cfdb6feb9e0ecb3a00e83d</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 J00173888041 68cfdb6feb9e0ecb3a00e83c</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 J00173888041 68cfdb6feb9e0ecb3a00e83a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 J00172509200 68cfdb6edc10270e8205f7f5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 J00173350729 68cfdb6acf56cbe45901cbd1</span>
 </code></pre></div>
     </div>
   </div>

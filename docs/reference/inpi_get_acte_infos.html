@@ -80,10 +80,7 @@
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">inpi_get_acte_infos</span><span class="op">(</span>siren <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in httr2::req_perform(httr2::req_body_json(httr2::request("https://registre-national-entreprises.inpi.fr/api/sso/login"),     list(username = user, password = Sys.getenv(varenv)))):</span> Failed to perform HTTP request.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Could not connect to server [registre-national-entreprises.inpi.fr]:</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> Failed to connect to registre-national-entreprises.inpi.fr port 443 after 81 ms: Could not connect to server</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in httr2::req_perform(httr2::req_headers(httr2::req_headers(httr2::request(urlTot),     Accept = "application/json"), Authorization = paste("Bearer",     inpi_get_token()))):</span> HTTP 404 Not Found.</span>
 </code></pre></div>
     </div>
   </div>
