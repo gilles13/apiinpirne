@@ -16,5 +16,7 @@ le fichier pdf du bilan
 retourne le pdf du bilan demande
 }
 \examples{
+\dontrun{
 inpi_get_bilan_pdf(id = "")
+}
 }

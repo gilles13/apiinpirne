@@ -16,5 +16,7 @@ json parse de la reponse a la requete
 retourne le json parse de reponse d'une requete sur personne physique
 }
 \examples{
+\dontrun{
 inpi_parse_pp(x = resultat1)
+}
 }

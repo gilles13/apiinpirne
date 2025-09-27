@@ -18,5 +18,7 @@ un pdf de l'extrait inpi ou un lien
 retourne l'extrait inpi du siren demande
 }
 \examples{
+\dontrun{
 inpi_get_extrait(siren = "123456789", url = FALSE)
+}
 }

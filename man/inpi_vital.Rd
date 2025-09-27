@@ -16,5 +16,7 @@ data.frame avec qques colonnes
 retourne les colonnes vitales
 }
 \examples{
+\dontrun{
 inpi_vital(x = resultat1)
+}
 }

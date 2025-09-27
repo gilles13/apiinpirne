@@ -16,5 +16,7 @@ data.frame avec les colonnes d'adresse dans le bon ordre
 retourne les colonnes de l'adresse dans le bon ordre
 }
 \examples{
+\dontrun{
 inpi_relocate(x = resultat1)
+}
 }

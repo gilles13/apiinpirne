@@ -18,5 +18,7 @@ string le token
 retourne le token necessaire aux requetes de l'API
 }
 \examples{
+\dontrun{
 inpi_get_token(user = "gillesfidani@gmail.com", varenv = "INPI_CODE")
+}
 }

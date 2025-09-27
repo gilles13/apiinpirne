@@ -4,12 +4,12 @@
 \alias{inpi_get_by_acti}
 \title{inpi_get_by_acti}
 \usage{
-inpi_get_by_acti(activite = "COMMERCIALE")
+inpi_get_by_acti(activite = "COMMERCIALE", simp = TRUE)
 }
 \arguments{
-\item{listesiren}{un vecteur contenant les sirens a interroger}
+\item{activite}{le nom de l'activite a interroger}
 
-\item{simp}{simplifier le json ? default = TRUE}
+\item{simp}{if TRUE (default) simplifyVector}
 }
 \value{
 json non parse de la reponse a la requete sur activite
@@ -18,5 +18,7 @@ json non parse de la reponse a la requete sur activite
 retourne le json de reponse de la requete sur un secteur d'activite
 }
 \examples{
+\dontrun{
 inpi_get_by_acti(activite = "ARTISANALE", simp = TRUE)
+}
 }

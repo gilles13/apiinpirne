@@ -18,5 +18,7 @@ json non parse de la reponse a la requete sur plusieurs sirens
 retourne le json de reponse de la requete sur plusieurs sirens
 }
 \examples{
+\dontrun{
 inpi_get_sirens(listesiren = c("123456789", "987654321"))
+}
 }

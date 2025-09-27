@@ -1,3 +1,33 @@
+globalVariables(c("simp", "dateEffet",
+									"keyword",
+									"sirene",
+									"siren",
+									"nom",
+									"prenoms",
+									"genre",
+									"nafn5",
+									"code",
+									"libelle",
+									"codeInseeCommune",
+									"libape",
+									"codeApe",
+									"representantId",
+									"name",
+									"roleEntreprise",
+									"typeDePersonne",
+									"typePers",
+									"inpi_codeRole",
+									"libelle",
+									"librole",
+									"roleEnt",
+									"ind.prenoms",
+									"numVoie",
+									"typeVoie",
+									"codePostal",
+									"voie",
+									"urlTot",
+									"commune"))
+
 # FONCTIONS POUR LE PACKAGE apiinpirne
 
 #' @title inpi_get_token
@@ -6,7 +36,9 @@
 #' @param varenv le nom de la variable d'environnement stockant le mot de passe
 #' @return string le token
 #' @examples
+#' \dontrun{
 #' inpi_get_token(user = "gillesfidani@gmail.com", varenv = "INPI_CODE")
+#' }
 #' @export
 inpi_get_token <- function(user = "gillesfidani@gmail.com", varenv = "INPI_CODE") {
 	token <- 
@@ -26,7 +58,9 @@ inpi_get_token <- function(user = "gillesfidani@gmail.com", varenv = "INPI_CODE"
 #' @param simp simplifier le json ? default = TRUE
 #' @return json non parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_get_siren(siren = "")
+#' }
 #' @export
 inpi_get_siren <- function(siren = "", simp = TRUE) {
 	siren <- gsub(" ", "", siren)
@@ -48,7 +82,9 @@ inpi_get_siren <- function(siren = "", simp = TRUE) {
 #' @param simp simplifier le json ? default = TRUE
 #' @return json non parse de la reponse a la requete sur plusieurs sirens
 #' @examples
+#' \dontrun{
 #' inpi_get_sirens(listesiren = c("123456789", "987654321"))
+#' }
 #' @export
 inpi_get_sirens <- function(listesiren = c("", ""), simp = TRUE) {
 	listesiren <- gsub(" ", "", listesiren)
@@ -69,13 +105,15 @@ inpi_get_sirens <- function(listesiren = c("", ""), simp = TRUE) {
 
 #' @title inpi_get_by_acti
 #' @description retourne le json de reponse de la requete sur un secteur d'activite
-#' @param listesiren un vecteur contenant les sirens a interroger
-#' @param simp simplifier le json ? default = TRUE
+#' @param activite le nom de l'activite a interroger
+#' @param simp if TRUE (default) simplifyVector
 #' @return json non parse de la reponse a la requete sur activite
 #' @examples
+#' \dontrun{
 #' inpi_get_by_acti(activite = "ARTISANALE", simp = TRUE)
+#' }
 #' @export
-inpi_get_by_acti <- function(activite = "COMMERCIALE") {
+inpi_get_by_acti <- function(activite = "COMMERCIALE", simp = TRUE) {
 	test_acti <- ifelse(!activite %in% c("COMMERCIALE",
 																		 "AGENT_COMMERCIAL",
 																		 "AGRICOLE_NON_ACTIF",
@@ -89,7 +127,7 @@ inpi_get_by_acti <- function(activite = "COMMERCIALE") {
 											1)
 	if(test_acti != 1) stop("Il faut choisir une activite parmi celles autorisees")
 	urlBase <- "https://registre-national-entreprises.inpi.fr/api/companies?pageSize=100&activitySectors="
-	urlTot <- paste0(urlBase, activite)
+	ulrTot <- paste0(urlBase, activite)
 	message(urlTot)
 	res <- 
 		urlTot |> 
@@ -107,7 +145,9 @@ inpi_get_by_acti <- function(activite = "COMMERCIALE") {
 #' @param simp simplifier le json ? default = TRUE
 #' @return json non parse de la reponse a la requete sur nom
 #' @examples
+#' \dontrun{
 #' inpi_get_by_name(nom = "FIDANI")
+#' }
 #' @export
 inpi_get_by_name <- function(nom = "", simp = TRUE) {
 	if(nom == "") stop("Il faut passer un nom a la fonction")
@@ -129,7 +169,9 @@ inpi_get_by_name <- function(nom = "", simp = TRUE) {
 #' @param x la requete a analyser
 #' @return vecteur de la (ou des) personnalite(s) juridique(s) de la requete
 #' @examples
+#' \dontrun{
 #' inpi_test_persoju(x = resultat1)
+#' }
 #' @export
 inpi_test_persoju <- function(x) {
 	perso <- names(x$formality$content)
@@ -147,7 +189,9 @@ inpi_test_persoju <- function(x) {
 #' @param x la requete a analyser
 #' @return vecteur du ou des types de personne
 #' @examples
+#' \dontrun{
 #' inpi_test_type_pers(x = resultat1)
+#' }
 #' @export
 inpi_test_type_pers <- function(x) {
 	typeperso <- x |> 
@@ -158,10 +202,13 @@ inpi_test_type_pers <- function(x) {
 
 #' @title inpi_test_var
 #' @description retourne la valeur d'une variable si elle existe, sinon un message d'erreur
-#' @param x la variable a chercher
+#' @param x l'objet contenant des variables
+#' @param var le nom de la var a tester
 #' @return tibble des moda et val de la var cherchee (si elle existe)
 #' @examples
+#' \dontrun{
 #' inpi_test_var(x)
+#' }
 #' @export
 inpi_test_var <- function(x, var = "") {
   if(var == "") {
@@ -183,7 +230,9 @@ inpi_test_var <- function(x, var = "") {
 #' @param x la reponse json a parser
 #' @return json parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_parse_pe(x = resultat1)
+#' }
 #' @export
 inpi_parse_pe <- function(x) {
 	tryCatch({
@@ -239,7 +288,9 @@ inpi_parse_pe <- function(x) {
 #' @param x la reponse json a parser
 #' @return json parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_parse_pm(x = resultat1)
+#' }
 #' @export
 inpi_parse_pm <- function(x) {
 	tryCatch({
@@ -316,7 +367,9 @@ inpi_parse_pm <- function(x) {
 #' @param x la reponse json a parser
 #' @return json parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_parse_pp(x = resultat1)
+#' }
 #' @export
 inpi_parse_pp <- function(x) {
 	res2 <- x |> 
@@ -358,7 +411,7 @@ inpi_parse_pp <- function(x) {
 		dplyr::relocate(genre, .after = prenoms)
 	resPP <- 
 		resPP |> 
-		dplyr::left_join(y = nafn5 |> mutate(code = gsub("\\.", "", code)),
+		dplyr::left_join(y = nafn5 |> dplyr::mutate(code = gsub("\\.", "", code)),
 										 by = c("codeApe" = "code")) |> 
 		dplyr::rename(libape=libelle) |> 
 		dplyr::rename(codeInsee=codeInseeCommune) |> 
@@ -372,7 +425,9 @@ inpi_parse_pp <- function(x) {
 #' @param x la reponse json a parser
 #' @return json parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_parse_meta(x = resultat1)
+#' }
 #' @export
 inpi_parse_meta <- function(x) {
 	system2("clear")
@@ -406,7 +461,9 @@ inpi_parse_meta <- function(x) {
 #' @param x la reponse json a parser
 #' @return data.frame avec qques colonnes
 #' @examples
+#' \dontrun{
 #' inpi_vital(x = resultat1)
+#' }
 #' @export
 inpi_vital <- function(x) {
 	x |> 
@@ -460,7 +517,9 @@ inpi_vital <- function(x) {
 #' @param x la reponse json a parser
 #' @return data.frame avec les colonnes d'adresse dans le bon ordre
 #' @examples
+#' \dontrun{
 #' inpi_relocate(x = resultat1)
+#' }
 #' @export
 inpi_relocate <- function(x) {
 	x |> 
@@ -474,7 +533,9 @@ inpi_relocate <- function(x) {
 #' @param x la reponse json a parser
 #' @return data.frame avec les infos sur les pouvoirs des PM
 #' @examples
+#' \dontrun{
 #' inpi_pouvoirs(x = resultat1)
+#' }
 #' @export
 inpi_pouvoirs <- function(x) {
 	tryCatch({
@@ -507,7 +568,7 @@ inpi_pouvoirs <- function(x) {
 			dplyr::left_join(y = inpi_codeRole, by = c("roleEnt" = "code")) |> 
 			dplyr::rename(librole=libelle) |> 
 			dplyr::relocate(librole, .after = roleEnt) |> 
-		  dplyr::arrange(desc(typePers), roleEnt) |> 
+		  dplyr::arrange(dplyr::desc(typePers), roleEnt) |> 
 		  dplyr::rename(tidyselect::any_of(myvars)) |> 
 		  dplyr::select(-tidyselect::any_of(c("numVoie", "typeVoie"))) |> 
 			inpi_vital()
@@ -534,7 +595,9 @@ inpi_pouvoirs <- function(x) {
 #' @param x la reponse json a parser
 #' @return data.frame avec les infos sur l'historique
 #' @examples
+#' \dontrun{
 #' inpi_histo(x = resultat1)
+#' }
 #' @export
 inpi_histo <- function(x) {
   tryCatch({
@@ -545,8 +608,8 @@ inpi_histo <- function(x) {
         "numeroLiasse",
         "codeEvenement",
         "libelleEvenement"))) |> 
-      mutate(dateEffet = as.Date(dateEffet, format = "%Y-%m-%dT%H:%M:%S+%H:%M")) |> 
-      dplyr::arrange(desc(dateEffet))
+      dplyr::mutate(dateEffet = as.Date(dateEffet, format = "%Y-%m-%dT%H:%M:%S+%H:%M")) |> 
+      dplyr::arrange(dplyr::desc(dateEffet))
     return(resHisto)
   }, error = function(x) return(NULL)
   )
@@ -557,7 +620,9 @@ inpi_histo <- function(x) {
 #' @param x la reponse json a parser
 #' @return data.frame avec les infos sur les PX
 #' @examples
+#' \dontrun{
 #' inpi_meta_px(x = resultat1)
+#' }
 #' @export
 inpi_meta_px <- function(x) {
 	typePers <- x |> inpi_test_type_pers()
@@ -566,9 +631,9 @@ inpi_meta_px <- function(x) {
 # 	return(typePers)
 	if(length(typePers) == 1) {
 			resPX <- switch(typePers,
-											"P" = inpi_parse_pp(x),
-											"M" = inpi_parse_pm(x),
-											"E" = inpi_parse_pe(x)
+											P = inpi_parse_pp(x),
+											M = inpi_parse_pm(x),
+											E = inpi_parse_pe(x)
 											)
 			return(resPX)
 	} else {
@@ -578,9 +643,9 @@ inpi_meta_px <- function(x) {
 				tp <- typePers[i]
 				y <- x[i, ]
 				res <- switch(tp,
-											"M" = inpi_parse_pm(y),
-											"P" = inpi_parse_pp(y),
-											"E" = inpi_parse_pe(y)
+											M = inpi_parse_pm(y),
+											P = inpi_parse_pp(y),
+											E = inpi_parse_pe(y)
 											)
 				res <- list(res)
 				malist <- append(x = malist, values = res)
@@ -600,7 +665,9 @@ inpi_meta_px <- function(x) {
 #' @param simp simplifier le json ? default = TRUE
 #' @return json non parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_get_acte_infos(siren = "")
+#' }
 #' @export
 inpi_get_acte_infos <- function(siren = "", simp = TRUE) {
   siren <- gsub(" ", "", siren)
@@ -622,7 +689,9 @@ inpi_get_acte_infos <- function(siren = "", simp = TRUE) {
 #' @param simp simplifier le json ? default = TRUE
 #' @return json non parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_get_acte(id = "")
+#' }
 #' @export
 inpi_get_acte <- function(id = "", simp = TRUE) {
   urlBase <- "https://registre-national-entreprises.inpi.fr/api/actes/"
@@ -644,9 +713,11 @@ inpi_get_acte <- function(id = "", simp = TRUE) {
 #' @param id l'identifiant a interroger
 #' @return le fichier pdf de l'acte
 #' @examples
+#' \dontrun{
 #' inpi_get_acte_pdf(id = "")
+#' }
 #' @export
-inpi_get_acte_pdf <- function(id = "", simp = TRUE) {
+inpi_get_acte_pdf <- function(id = "") {
 	pdfpath <- tempfile(fileext = ".pdf")
   urlBase <- "https://registre-national-entreprises.inpi.fr/api/actes/"
   urlTot <- paste0(urlBase, id, "/download")
@@ -669,7 +740,9 @@ inpi_get_acte_pdf <- function(id = "", simp = TRUE) {
 #' @param id l'identifiant du bilan a consulter
 #' @return le fichier pdf du bilan
 #' @examples
+#' \dontrun{
 #' inpi_get_bilan_pdf(id = "")
+#' }
 #' @export
 inpi_get_bilan_pdf <- function(id = "") {
 	pdfpath <- tempfile(fileext = ".pdf")
@@ -696,7 +769,9 @@ inpi_get_bilan_pdf <- function(id = "") {
 #' @param simp simplifier le json ? default = TRUE
 #' @return json non parse de la reponse a la requete
 #' @examples
+#' \dontrun{
 #' inpi_get_bilan_saisis(id = "")
+#' }
 #' @export
 inpi_get_bilan_saisis <- function(id = "", simp = TRUE) {
   id <- gsub(" ", "", id)
@@ -718,7 +793,9 @@ inpi_get_bilan_saisis <- function(id = "", simp = TRUE) {
 #' @param url si true la fonction ne retourne que le lien, pas le doc
 #' @return un pdf de l'extrait inpi ou un lien
 #' @examples
+#' \dontrun{
 #' inpi_get_extrait(siren = "123456789", url = FALSE)
+#' }
 #' @export
 inpi_get_extrait <- function(siren, url = FALSE) {
   siren <- gsub(" ", "", siren)
@@ -740,7 +817,7 @@ inpi_get_extrait <- function(siren, url = FALSE) {
       httr2::resp_body_raw()
   writeBin(pdfraw, pdfpath)
   # system2("xdg-open", pdfpath)
-  browseURL(pdfpath)
+  utils::browseURL(pdfpath)
   message(paste0("Le fichier pdf : ", pdfpath))
 	}
 }

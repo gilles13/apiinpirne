@@ -11,7 +11,7 @@ No package binary available in CRAN. Need manual compilation.
 
     R CMD build apiinpirne
 
-    R CMD INSTALL apiinpirne_0.0.0.9000.tar.gz
+    R CMD INSTALL apiinpirne_0.1.tar.gz
 
 or use `devtools` *package* from `R`
 

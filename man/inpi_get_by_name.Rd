@@ -18,5 +18,7 @@ json non parse de la reponse a la requete sur nom
 retourne le json de reponse de la requete sur un nom d'entreprise (requete type content)
 }
 \examples{
+\dontrun{
 inpi_get_by_name(nom = "FIDANI")
+}
 }

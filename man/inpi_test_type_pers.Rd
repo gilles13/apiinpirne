@@ -16,5 +16,7 @@ vecteur du ou des types de personne
 retourne le type de personne : P / M / E
 }
 \examples{
+\dontrun{
 inpi_test_type_pers(x = resultat1)
+}
 }

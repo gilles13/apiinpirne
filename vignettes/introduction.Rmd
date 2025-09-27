@@ -7,4 +7,49 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-TODO
+## Utilité
+
+Le *pacakge* `apiinpirne` permet de requêter l'API RNE de l'Inpi.
+
+Après avoir configuré un compte utilisateur (voir vignette), vous pourrez :
+
++ télécharger des infos générales sur les entreprises enregistrées ;
+
++ télécharger des infos sur la répartition des pouvoirs des entreprises ;
+
++ télécharger des listes d'entreprises, par nom ou par activité ;
+
++ télécharger (avec parcimonie ^^) des documents administratifs et liasses fiscales ;
+
++ télécharger des avis d'inscription au RNE ;
+
+## Exemple
+
+### Obtenir des informations générales sur une entreprise
+
+```{r}
+library("apiinpirne")
+
+df <- 
+	"562 024 422" |> 
+	inpi_get_siren()
+
+df |> 
+	inpi_parse_meta() |>
+	t() |>
+	as.data.frame() |>
+	knitr::kable()
+```
+
+### Obtenir un avis d'inscription
+```{r, eval = FALSE}
+"401 887 401" |> 
+	inpi_get_extrait()
+```
+
+## Pour aller plus loin
+
+Pour d'autres informations sur les fonctionnalités de recherche, voir vignette `utilisation`
+
+TODO : faire la vignette utilisation
+

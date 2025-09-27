@@ -16,5 +16,7 @@ data.frame avec les infos sur les pouvoirs des PM
 retourne les colonnes du pouvoir !
 }
 \examples{
+\dontrun{
 inpi_pouvoirs(x = resultat1)
+}
 }

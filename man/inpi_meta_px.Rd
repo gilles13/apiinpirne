@@ -16,5 +16,7 @@ data.frame avec les infos sur les PX
 retourne les colonnes des px
 }
 \examples{
+\dontrun{
 inpi_meta_px(x = resultat1)
+}
 }

@@ -4,7 +4,7 @@
 \alias{inpi_get_acte_pdf}
 \title{inpi_get_acte_pdf}
 \usage{
-inpi_get_acte_pdf(id = "", simp = TRUE)
+inpi_get_acte_pdf(id = "")
 }
 \arguments{
 \item{id}{l'identifiant a interroger}
@@ -16,5 +16,7 @@ le fichier pdf de l'acte
 retourne le pdf de l'acte demande
 }
 \examples{
+\dontrun{
 inpi_get_acte_pdf(id = "")
+}
 }

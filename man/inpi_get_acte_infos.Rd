@@ -18,5 +18,7 @@ json non parse de la reponse a la requete
 retourne le json de reponse de la requete sur un acte
 }
 \examples{
+\dontrun{
 inpi_get_acte_infos(siren = "")
+}
 }

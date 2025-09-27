@@ -16,5 +16,7 @@ data.frame avec les infos sur l'historique
 retourne les colonnes de l'historique
 }
 \examples{
+\dontrun{
 inpi_histo(x = resultat1)
+}
 }

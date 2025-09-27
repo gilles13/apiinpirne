@@ -7,7 +7,9 @@
 inpi_test_var(x, var = "")
 }
 \arguments{
-\item{x}{la variable a chercher}
+\item{x}{l'objet contenant des variables}
+
+\item{var}{le nom de la var a tester}
 }
 \value{
 tibble des moda et val de la var cherchee (si elle existe)
@@ -16,5 +18,7 @@ tibble des moda et val de la var cherchee (si elle existe)
 retourne la valeur d'une variable si elle existe, sinon un message d'erreur
 }
 \examples{
+\dontrun{
 inpi_test_var(x)
+}
 }

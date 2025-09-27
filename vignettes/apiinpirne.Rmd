@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, out.width="50%"}
+```{r, out.width="20%"}
 knitr::include_graphics(path = "../man/figures/logo_apiinpirne_center.png")
 ```
 

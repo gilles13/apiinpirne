@@ -16,5 +16,7 @@ vecteur de la (ou des) personnalite(s) juridique(s) de la requete
 retourne la personnalite juridique d'une requete sur siren(s)
 }
 \examples{
+\dontrun{
 inpi_test_persoju(x = resultat1)
+}
 }
